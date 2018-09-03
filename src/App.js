@@ -1,21 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import './App.css'
+import TripAppBar from "./components/TripAppBar";
+import TripCard from "./components/TripCard";
+import Grid from '@material-ui/core/Grid';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">TripWeGo React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <TripAppBar counter={10}/>
+                <Grid container spacing={24}>
+                    <TripCard
+                        title={'trip #1'}
+                        desc={'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'}/>
+                    <TripCard
+                        title={'trip #2'}
+                        desc={'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'}/>
+                    <TripCard
+                        title={'trip #3'}
+                        desc={'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'}/>
+                    <TripCard
+                        title={'trip #4'}
+                        desc={'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'}/>
+                </Grid>
+            </div>
+        )
+    }
 }
 
-export default App;
+export default App
