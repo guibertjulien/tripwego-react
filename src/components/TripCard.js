@@ -21,7 +21,7 @@ const styles = {
     },
 };
 
-const TripCard = ({classes, title, desc}) => (
+const TripCard = ({classes, title, desc, onClick, shared}) => (
     <Grid item xs={6} sm={3}>
         <Card className={classes.card}>
             <CardActionArea>
@@ -40,10 +40,13 @@ const TripCard = ({classes, title, desc}) => (
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
-                <Button size="small" color="primary">
+                {shared && (
+                    <Button size="small" color="primary">
+                        Share
+                    </Button>
+                )
+                }
+                <Button size="small" color="primary" onClick={() => onClick()}>
                     Learn More
                 </Button>
             </CardActions>
@@ -53,8 +56,9 @@ const TripCard = ({classes, title, desc}) => (
 
 TripCard.propTypes = {
     classes: PropTypes.object.isRequired,
-    title: PropTypes.object.isRequired,
-    desc: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    shared: PropTypes.bool.isRequired,
 };
 
 export default withStyles(styles)(TripCard);

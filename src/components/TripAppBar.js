@@ -23,7 +23,7 @@ const TripAppBar = ({counter}) => (
 )
 
 TripAppBar.propTypes = {
-    counter: PropTypes.object.isRequired,
+    counter: PropTypes.number.isRequired,
 };
 
 export default withStyles(styles)(TripAppBar);
